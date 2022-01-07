@@ -1,0 +1,17 @@
+{
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "json", "yaml"],
+  "coc.preferences.formatOnTypeFiletypes": ["javascript", "typescript", "json", "yaml"],
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "eslint.packageManager": "yarn",
+  "eslint.autoFixOnSave": true,
+  "eslint.useESLintClass": true,
+  "pairs.enableBackspace": false,
+  "prettier.printWidth": 100,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "prettier.statusItemText": "",
+  "prettier.eslintIntegration": true,
+  "prettier.tslintIntegration": true,
+  "yaml.format.singleQuote": true
+}
