@@ -1,7 +1,7 @@
 "初次自动载入插件
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-        \ https://raw.fastgit.org/junegunn/vim-plug/master/plug.vim
+        \ https://ghproxy.com/https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
