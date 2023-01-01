@@ -3,8 +3,10 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local servers = {
   'jsonls',
+  'bashls',
   'eslint',
   'tsserver',
+  'sumneko_lua',
 }
 
 for _, lsp in ipairs(servers) do
