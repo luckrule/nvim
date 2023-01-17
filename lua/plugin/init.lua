@@ -21,6 +21,10 @@ return require('packer').startup({ function(use)
     'windwp/nvim-autopairs',
     config = [[require('plugin.config.autopairs')]],
   }
+  use {
+    'ggandor/leap.nvim',
+    config = [[require('plugin.config.leap')]],
+  }
   use 'neovim/nvim-lspconfig'
   use 'b0o/schemastore.nvim'
   use {
