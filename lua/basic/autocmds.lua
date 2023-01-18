@@ -25,4 +25,3 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   command = 'silent! EslintFixAll',
   desc = 'js、ts文件保存时自动使用eslint修复'
 })
-

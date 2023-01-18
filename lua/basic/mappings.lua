@@ -6,7 +6,6 @@ local opts = {
 vim.keymap.set('n', 'Q', '<cmd>q<cr>', opts)
 vim.keymap.set('n', 'U', '<c-r>', opts)
 vim.keymap.set('n', ';', '<cmd>', opts)
-vim.keymap.set('n', '<leader><cr>', '<cmd>nohlsearch<cr>', opts)
 
 -- lsp
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
