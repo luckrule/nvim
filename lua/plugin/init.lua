@@ -18,6 +18,10 @@ return require('packer').startup({ function(use)
     config = [[require('plugin.config.gruvbox')]],
   }
   use {
+    'nvim-treesitter/nvim-treesitter',
+    config = [[require('plugin.config.treesitter')]],
+  }
+  use {
     'windwp/nvim-autopairs',
     config = [[require('plugin.config.autopairs')]],
   }
