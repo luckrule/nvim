@@ -19,7 +19,7 @@ autopairs.add_rules({
   rule('%(.*%)%s*%=>$', ' {}', { 'typescript', 'javascript' })
   :use_regex(true)
   :set_end_pair_length(1),
-  rule('<', '>'),
+  rule('<', '>', 'html'),
   rule('（', '）')
   :set_end_pair_length(1),
   rule('「', '」')
