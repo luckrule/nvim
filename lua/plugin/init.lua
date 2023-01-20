@@ -13,6 +13,7 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup({ function(use)
   use 'wbthomason/packer.nvim'
+  use 'nvim-lua/plenary.nvim'
   use {
     'ellisonleao/gruvbox.nvim',
     config = [[require('plugin.config.gruvbox')]],
@@ -53,6 +54,7 @@ return require('packer').startup({ function(use)
     'numToStr/Comment.nvim',
     config = [[require('plugin.config.comment')]],
   }
+  use 'nvim-telescope/telescope.nvim'
 
   if packer_bootstrap then
     require('packer').sync()
