@@ -1,7 +1,7 @@
 return {
   cmd = {
-     'lua-language-server',
-     '--locale=zh-cn',
+    'lua-language-server',
+    '--locale=zh-cn',
   },
   settings = {
     Lua = {
@@ -13,7 +13,11 @@ return {
         disable = { 'lowercase-global' },
       },
       workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
+        library = {
+          vim.fn.expand('$VIMRUNTIME'),
+          '${3rd}/busted/library',
+          '${3rd}/luassert/library',
+        },
       },
       telemetry = {
         enable = false,
