@@ -49,6 +49,10 @@ return require('packer').startup({ function(use)
       'saadparwaiz1/cmp_luasnip',
     },
   }
+  use {
+    'numToStr/Comment.nvim',
+    config = [[require('plugin.config.comment')]],
+  }
 
   if packer_bootstrap then
     require('packer').sync()
