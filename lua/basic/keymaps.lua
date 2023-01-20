@@ -41,7 +41,9 @@ keymap('n', '<leader>D', vim.lsp.buf.type_definition)
 keymap('n', '<leader>rn', vim.lsp.buf.rename)
 keymap('n', '<leader>ca', vim.lsp.buf.code_action)
 keymap('n', 'gr', vim.lsp.buf.references)
-keymap('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end)
+keymap('n', '<leader>f', function()
+  vim.lsp.buf.format({ async = true })
+end)
 
 -- telescope
 local builtin = require('telescope.builtin')
