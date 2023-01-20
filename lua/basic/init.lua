@@ -1,3 +1,3 @@
 require('basic.options')
-require('basic.mappings')
+require('basic.keymaps')
 require('basic.autocmds')
