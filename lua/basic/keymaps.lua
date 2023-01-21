@@ -1,17 +1,23 @@
-local opts = {
+local defaultOpts = {
   noremap = true,
   silent = true
 }
 
-function keymap(mode, to, from)
-  vim.keymap.set(mode, to, from, opts)
+function keymap(mode, to, from, opts)
+  vim.keymap.set(mode, to, from, opts or defaultOpts)
 end
 
 -- base
+keymap('i', 'kk', '<esc>')
 keymap('n', 'Q', '<cmd>q<cr>')
 keymap('n', 'U', '<c-r>')
 keymap('n', ';', '<cmd>')
 keymap('n', '<leader>nh', ':nohlsearch<cr>')
+keymap('n', '<leader><left>', ':bNext<cr>')
+keymap('n', '<leader><right>', ':bnext<cr>')
+keymap('n', '<leader>tn', ':tabnew ', {})
+keymap('n', '<leader>t<left>', ':tabNext<cr>')
+keymap('n', '<leader>t<right>', ':tabnext<cr>')
 
 -- lsp
 keymap('n', '<leader>e', vim.diagnostic.open_float)
