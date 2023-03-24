@@ -24,13 +24,3 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   command = 'source <afile> | PackerSync',
   desc = 'Packer自动安装'
 })
-
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = {
-    '*.js',
-    '*.ts'
-  },
-  group = 'AuGroup',
-  command = 'silent! EslintFixAll',
-  desc = 'js、ts文件保存时自动使用eslint修复'
-})

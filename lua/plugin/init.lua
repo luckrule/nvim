@@ -30,7 +30,10 @@ return require('packer').startup({ function(use)
     'ggandor/leap.nvim',
     config = [[require('plugin.config.leap')]],
   }
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig'
+  use 'jose-elias-alvarez/null-ls.nvim'
   use 'b0o/schemastore.nvim'
   use {
     'L3MON4D3/LuaSnip',
