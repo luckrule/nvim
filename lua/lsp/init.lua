@@ -11,6 +11,7 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'lua_ls',
     'jsonls',
+    'yamlls',
     'bashls',
     'eslint',
     'tsserver',
