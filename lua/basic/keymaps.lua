@@ -1,6 +1,6 @@
 local defaultOpts = {
   noremap = true,
-  silent = true
+  silent = true,
 }
 
 function keymap(mode, to, from, opts)

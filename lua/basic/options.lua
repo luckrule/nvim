@@ -17,28 +17,28 @@ vim.opt.cmdwinheight = 8
 vim.opt.copyindent = true
 vim.opt.expandtab = true
 vim.opt.fileencoding = 'utf-8'
-vim.opt.fileencodings:append {
+vim.opt.fileencodings:append({
   'gbk',
   'cp936',
   'gb18030',
   'gb2312',
-}
+})
 vim.opt.gdefault = true
 vim.opt.hidden = true
 vim.opt.ignorecase = true
 vim.opt.magic = true
-vim.opt.matchpairs:append {
+vim.opt.matchpairs:append({
   '<:>',
-}
+})
 vim.opt.matchtime = 2
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
 vim.opt.shiftwidth = 2
-vim.opt.shortmess:append {
+vim.opt.shortmess:append({
   w = true,
   m = true,
   c = true,
-}
+})
 vim.opt.showcmd = true
 vim.opt.showmatch = true
 vim.opt.showmode = true

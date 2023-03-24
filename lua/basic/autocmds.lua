@@ -15,12 +15,12 @@ vim.api.nvim_create_autocmd('BufEnter', {
     end
   end,
   once = true,
-  desc = '打开文件自动跳转上次光标位置'
+  desc = '打开文件自动跳转上次光标位置',
 })
 
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = '*/plugin/init.lua',
   group = 'AuGroup',
   command = 'source <afile> | PackerSync',
-  desc = 'Packer自动安装'
+  desc = 'Packer自动安装',
 })

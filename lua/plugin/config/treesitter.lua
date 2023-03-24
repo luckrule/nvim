@@ -19,6 +19,6 @@ require('nvim-treesitter.configs').setup({
       node_incremental = '<CR>',
       node_decremental = '<BS>',
       scope_incremental = '<TAB>',
-    }
+    },
   },
 })

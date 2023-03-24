@@ -1,7 +1,7 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
-cmp.setup {
+cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -11,10 +11,10 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm {
+    ['<CR>'] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
-    },
+    }),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -40,21 +40,21 @@ cmp.setup {
     { name = 'nvim_lsp_signature_help' },
     { name = 'luasnip' },
   },
-}
+})
 
 cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp_document_symbol' }
+    { name = 'nvim_lsp_document_symbol' },
   }, {
-    { name = 'buffer' }
-  })
+    { name = 'buffer' },
+  }),
 })
 
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'path' },
-    { name = 'cmdline' }
-  }
+    { name = 'cmdline' },
+  },
 })

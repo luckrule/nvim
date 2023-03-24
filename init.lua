@@ -1,3 +1,3 @@
-pcall(require, 'basic')
-pcall(require, 'plugin')
-pcall(require, 'lsp')
+pcall(require, "basic")
+pcall(require, "plugin")
+pcall(require, "lsp")

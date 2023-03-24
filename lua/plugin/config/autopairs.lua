@@ -10,22 +10,15 @@ autopairs.setup({
   },
 })
 
-cmp.event:on(
-  'confirm_done',
-  cmp_autopairs.on_confirm_done()
-)
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
 autopairs.add_rules({
   rule('%(.*%)%s*%=>$', ' {}', { 'typescript', 'javascript' })
-  :use_regex(true)
-  :set_end_pair_length(1),
+    :use_regex(true)
+    :set_end_pair_length(1),
   rule('<', '>', 'html'),
-  rule('（', '）')
-  :set_end_pair_length(1),
-  rule('「', '」')
-  :set_end_pair_length(1),
-  rule('【', '】')
-  :set_end_pair_length(1),
-  rule('《', '》')
-  :set_end_pair_length(1),
+  rule('（', '）'):set_end_pair_length(1),
+  rule('「', '」'):set_end_pair_length(1),
+  rule('【', '】'):set_end_pair_length(1),
+  rule('《', '》'):set_end_pair_length(1),
 })
