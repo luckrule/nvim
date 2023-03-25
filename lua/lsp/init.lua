@@ -27,3 +27,4 @@ require('mason-lspconfig').setup_handlers({
 
 require('lsp.config.cmp')
 require('lsp.config.null_ls')
+require('lsp.config.luasnip')

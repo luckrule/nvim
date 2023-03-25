@@ -47,7 +47,6 @@ return require('packer').startup({
     use({
       'L3MON4D3/LuaSnip',
       requires = 'rafamadriz/friendly-snippets',
-      config = [[require('plugin.config.luasnip')]],
     })
     use({
       'hrsh7th/nvim-cmp',
@@ -62,6 +61,7 @@ return require('packer').startup({
         'saadparwaiz1/cmp_luasnip',
       },
     })
+    use('mfussenegger/nvim-dap')
     use({
       'numToStr/Comment.nvim',
       config = [[require('plugin.config.comment')]],
