@@ -17,3 +17,21 @@ vim.api.nvim_create_autocmd('BufEnter', {
   once = true,
   desc = '打开文件自动跳转上次光标位置',
 })
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = augroup,
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  desc = '高亮复制内容',
+})
+
+vim.api.nvim_create_autocmd({
+  'FocusGained',
+  'TermClose',
+  'TermLeave',
+}, {
+  group = augroup,
+  command = 'checktime',
+  desc = '文件被修改后重新加载',
+})
