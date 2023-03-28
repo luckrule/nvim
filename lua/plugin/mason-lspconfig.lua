@@ -9,7 +9,7 @@ return {
     },
     {
       '<LEADER>cl',
-      '<CMD>LspInfo<Cr>',
+      '<CMD>LspInfo<CR>',
       desc = 'lsp info',
     },
     {
@@ -39,12 +39,12 @@ return {
     },
     {
       'gd',
-      '<CMD>Telescope lsp_definitions<Cr>',
+      '<CMD>Telescope lsp_definitions<CR>',
       desc = '转到定义',
     },
     {
       'gr',
-      '<CMD>Telescope lsp_references<Cr>',
+      '<CMD>Telescope lsp_references<CR>',
       desc = '转到引用',
     },
     {
@@ -54,12 +54,12 @@ return {
     },
     {
       'gI',
-      '<CMD>Telescope lsp_implementations<Cr>',
+      '<CMD>Telescope lsp_implementations<CR>',
       desc = '转到实现',
     },
     {
       'gt',
-      '<CMD>Telescope lsp_type_definitions<Cr>',
+      '<CMD>Telescope lsp_type_definitions<CR>',
       desc = '转到类型定义',
     },
     {
