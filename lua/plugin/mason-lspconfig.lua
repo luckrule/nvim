@@ -3,33 +3,33 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   keys = {
     {
-      '<leader>cd',
+      '<LEADER>cd',
       vim.diagnostic.open_float,
       desc = '当前行诊断信息',
     },
     {
-      '<leader>cl',
-      '<cmd>LspInfo<cr>',
+      '<LEADER>cl',
+      '<CMD>LspInfo<Cr>',
       desc = 'lsp info',
     },
     {
-      '<leader>cf',
+      '<LEADER>cf',
       vim.lsp.buf.format,
       desc = '格式化文件',
     },
     {
-      '<leader>cf',
+      '<LEADER>cf',
       vim.lsp.buf.format,
       desc = '范围格式化',
       mode = 'v',
     },
     {
-      '<leader>cr',
+      '<LEADER>cr',
       vim.lsp.buf.rename,
       desc = '修改名称',
     },
     {
-      '<leader>ca',
+      '<LEADER>ca',
       vim.lsp.buf.code_action,
       desc = '代码操作',
       mode = {
@@ -39,12 +39,12 @@ return {
     },
     {
       'gd',
-      '<cmd>Telescope lsp_definitions<cr>',
+      '<CMD>Telescope lsp_definitions<Cr>',
       desc = '转到定义',
     },
     {
       'gr',
-      '<cmd>Telescope lsp_references<cr>',
+      '<CMD>Telescope lsp_references<Cr>',
       desc = '转到引用',
     },
     {
@@ -54,12 +54,12 @@ return {
     },
     {
       'gI',
-      '<cmd>Telescope lsp_implementations<cr>',
+      '<CMD>Telescope lsp_implementations<Cr>',
       desc = '转到实现',
     },
     {
       'gt',
-      '<cmd>Telescope lsp_type_definitions<cr>',
+      '<CMD>Telescope lsp_type_definitions<Cr>',
       desc = '转到类型定义',
     },
     {
