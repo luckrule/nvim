@@ -1,10 +1,10 @@
-vim.api.nvim_create_augroup('AuGroup', {
+local augroup = vim.api.nvim_create_augroup('BasicAuGroup', {
   clear = true,
 })
 
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = '*',
-  group = 'AuGroup',
+  group = augroup,
   callback = function()
     if vim.fn.match(vim.bo.filetype, '\\v\\ccommit|rebase') == -1 then
       local mark = vim.api.nvim_buf_get_mark(0, '"')
@@ -16,11 +16,4 @@ vim.api.nvim_create_autocmd('BufEnter', {
   end,
   once = true,
   desc = '打开文件自动跳转上次光标位置',
-})
-
-vim.api.nvim_create_autocmd('BufWritePost', {
-  pattern = '*/plugin/init.lua',
-  group = 'AuGroup',
-  command = 'source <afile> | PackerSync',
-  desc = 'Packer自动安装',
 })

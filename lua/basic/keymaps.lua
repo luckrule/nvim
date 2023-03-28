@@ -1,69 +1,69 @@
-local defaultOpts = {
-  noremap = true,
-  silent = true,
-}
-
-function keymap(mode, to, from, opts)
-  vim.keymap.set(mode, to, from, opts or defaultOpts)
+function map(mode, to, from, opts)
+  vim.keymap.set(mode, to, from, opts or {})
 end
 
--- base
-keymap('n', 'Q', '<cmd>q<cr>')
-keymap('n', 'U', '<c-r>')
-keymap('n', ';', '<cmd>')
-keymap({ 'n', 'i' }, '<esc>', '<cmd>nohlsearch<cr><esc>')
-keymap('n', '<leader><left>', '<cmd>bNext<cr>')
-keymap('n', '<leader><right>', '<cmd>bnext<cr>')
-keymap('n', '<leader>tn', '<cmd>tabnew ', {})
-keymap('n', '<leader>t<left>', '<cmd>tabNext<cr>')
-keymap('n', '<leader>t<right>', '<cmd>tabnext<cr>')
-keymap('n', '<A-j>', '<cmd>m .+1<cr>==')
-keymap('n', '<A-k>', '<cmd>m .-2<cr>==')
-keymap('n', '<leader>qq', '<cmd>qa<cr>')
-keymap('i', '<A-j>', '<esc><cmd>m .+1<cr>==gi')
-keymap('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi')
-keymap('i', 'kk', '<esc>')
-keymap('v', '<A-j>', '<cmd>m \'>+1<cr>gv=gv')
-keymap('v', '<A-k>', '<cmd>m \'<-2<cr>gv=gv')
-keymap({ 'i', 'v', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>')
+-- 基础
+map(
+  { 'i', 'n' },
+  '<ESC>',
+  '<CMD>noh<CR><ESC>',
+  { desc = 'Esc以及取消高亮搜索 ' }
+)
+map({ 'n', 'x' }, '\\w', '*N', { desc = '搜索光标下的单词' })
+map(
+  { 'i', 'v', 'n', 's' },
+  '<C-s>',
+  '<CMD>w<CR><ESC>',
+  { desc = '保存文件' }
+)
+map('n', '<LEADER>fn', '<CMD>enew<CR>', { desc = '新文件' })
+map('n', '<LEADER>qq', '<CMD>qa<CR>', { desc = '退出全部' })
+map('n', 'Q', '<CMD>q<CR>', { desc = '关闭文件' })
+map('n', 'U', '<C-r>', { desc = '重做' })
 
--- lsp
-keymap('n', '<leader>e', vim.diagnostic.open_float)
-keymap('n', '<leader>q', vim.diagnostic.setloclist)
-keymap('n', '<leader><up>', vim.diagnostic.goto_prev)
-keymap('n', '<leader><down>', vim.diagnostic.goto_next)
-keymap('n', 'gD', vim.lsp.buf.declaration)
-keymap('n', 'gd', vim.lsp.buf.definition)
-keymap('n', 'K', function()
-  local cw = vim.fn.expand('<cword>')
-  if vim.fn.index({ 'vim', 'help' }, vim.bo.filetype) >= 0 then
-    vim.api.nvim_command('h ' .. cw)
-  elseif vim.lsp.buf.server_ready() then
-    vim.lsp.buf.hover()
-  else
-    vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
-  end
-end)
-keymap('n', 'gi', vim.lsp.buf.implementation)
-keymap('n', '<c-k>', vim.lsp.buf.signature_help)
-keymap('n', '<leader>wa', vim.lsp.buf.add_workspace_folder)
-keymap('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder)
-keymap('n', '<leader>wl', function()
-  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-end)
-keymap('n', '<leader>D', vim.lsp.buf.type_definition)
-keymap('n', '<leader>rn', vim.lsp.buf.rename)
-keymap('n', '<leader>ca', vim.lsp.buf.code_action)
-keymap('n', 'gr', vim.lsp.buf.references)
-keymap('n', '<leader>f', function()
-  vim.lsp.buf.format({ async = true })
-end)
+-- 移动行
+map('n', '<A-j>', '<CMD>m .+1<CR>==', { desc = '向下移动行' })
+map('n', '<A-k>', '<CMD>m .-2<CR>==', { desc = '向上移动行' })
+map('i', '<A-j>', '<ESC><CMD>m .+1<CR>==gi', { desc = '向下移动行' })
+map('i', '<A-k>', '<ESC><CMD>m .-2<CR>==gi', { desc = '向上移动行' })
+map('v', '<A-j>', ':m \'>+1<CR>gv=gv', { desc = '向下移动行' })
+map('v', '<A-k>', ':m \'<-2<CR>gv=gv', { desc = '向上移动行' })
 
--- telescope
-local builtin = require('telescope.builtin')
-keymap('n', '<leader>ff', builtin.find_files)
-keymap('n', '<leader>fg', builtin.live_grep)
-keymap('n', '<leader>fb', builtin.buffers)
-keymap('n', '<leader>fh', builtin.help_tags)
-keymap('n', '<leader>fch', builtin.command_history)
-keymap('n', '<leader>fsh', builtin.search_history)
+-- 缓存区
+map('n', '<LEADER>bl', '<CMD>bprevious<CR>', { desc = '上一个缓冲区' })
+map('n', '<LEADER>bh', '<CMD>bnext<CR>', { desc = '下一个缓冲区' })
+map('n', '<LEADER>bb', '<CMD>e #<CR>', { desc = '切换到另一个缓冲区' })
+
+-- 窗口
+map('n', '<LEADER>ww', '<C-W>p', { desc = '切换窗口' })
+map('n', '<LEADER>wd', '<C-W>c', { desc = '关闭窗口' })
+map('n', '<LEADER>w-', '<C-W>s', { desc = '水平分割窗口' })
+map('n', '<LEADER>w|', '<C-W>v', { desc = '垂直分割窗口' })
+map('n', '<LEADER>-', '<C-W>s', { desc = '水平分割窗口' })
+map('n', '<LEADER>|', '<C-W>v', { desc = '垂直分割窗口' })
+map('n', '<C-h>', '<C-w>h', { desc = '切换至左侧窗口' })
+map('n', '<C-j>', '<C-w>j', { desc = '切换至下方窗口' })
+map('n', '<C-k>', '<C-w>k', { desc = '切换至上方窗口' })
+map('n', '<C-l>', '<C-w>l', { desc = '切换至右侧窗口' })
+map('n', '<LEADER>wh', '<LEADER>ww>h', { desc = '切换至左侧窗口' })
+map('n', '<LEADER>wj', '<LEADER>ww>j', { desc = '切换至下方窗口' })
+map('n', '<LEADER>wk', '<LEADER>ww>k', { desc = '切换至上方窗口' })
+map('n', '<LEADER>wl', '<LEADER>ww>l', { desc = '切换至右侧窗口' })
+
+-- 标签页
+map(
+  'n',
+  '<LEADER><TAB>l',
+  '<CMD>tablast<CR>',
+  { desc = '最后一个标签页' }
+)
+map('n', '<LEADER><TAB>f', '<CMD>tabfirst<CR>', { desc = '第一个标签页' })
+map('n', '<LEADER><TAB><TAB>', '<CMD>tabnew<CR>', { desc = '新标签页' })
+map('n', '<LEADER><TAB>]', '<CMD>tabnext<CR>', { desc = '下一个标签页' })
+map('n', '<LEADER><TAB>d', '<CMD>tabclose<CR>', { desc = '关闭标签页' })
+map(
+  'n',
+  '<LEADER><TAB>[',
+  '<CMD>tabprevious<CR>',
+  { desc = '上一个标签页' }
+)
