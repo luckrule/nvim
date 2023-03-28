@@ -24,6 +24,11 @@ return {
       mode = 'v',
     },
     {
+      '<leader>cr',
+      vim.lsp.buf.rename,
+      desc = '修改名称',
+    },
+    {
       '<leader>ca',
       vim.lsp.buf.code_action,
       desc = '代码操作',
