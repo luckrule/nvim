@@ -15,6 +15,13 @@ return {
     highlight = {
       enable = true,
     },
+    indent = {
+      enable = true,
+    },
+    context_commentstring = {
+      enable = true,
+      enable_autocmd = false,
+    },
     incremental_selection = {
       enable = true,
       keymaps = {
@@ -25,4 +32,7 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    require('nvim-treesitter.configs').setup(opts)
+  end,
 }
