@@ -1,6 +1,9 @@
 return {
   'folke/trouble.nvim',
-  cmd = { 'TroubleToggle', 'Trouble' },
+  cmd = {
+    'TroubleToggle',
+    'Trouble',
+  },
   keys = {
     {
       '<leader>xx',

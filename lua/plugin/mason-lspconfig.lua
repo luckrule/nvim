@@ -1,6 +1,9 @@
 return {
   'williamboman/mason-lspconfig.nvim',
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = {
+    'BufReadPre',
+    'BufNewFile',
+  },
   keys = {
     {
       '<LEADER>cd',
@@ -126,6 +129,8 @@ return {
     },
   },
   dependencies = {
+    'neovim/nvim-lspconfig',
+    'williamboman/mason.nvim',
     'b0o/schemastore.nvim',
   },
   opts = {

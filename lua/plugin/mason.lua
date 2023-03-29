@@ -1,5 +1,6 @@
 return {
   'williamboman/mason.nvim',
+  lazy = true,
   build = ':MasonUpdate',
   keys = {
     {
