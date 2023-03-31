@@ -8,7 +8,6 @@ return {
     local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
     return {
-      automatic_setup = true,
       on_attach = function(client, bufnr)
         if client.supports_method('textDocument/formatting') then
           vim.api.nvim_clear_autocmds({
