@@ -146,13 +146,9 @@ return {
   },
   config = function(_, opts)
     local servers = {
-      bashls = {
-        GLOB_PATTERN = '*@(.sh|.zsh|.inc|.bash|.command)',
-      },
+      bashls = { GLOB_PATTERN = '*@(.sh|.zsh|.inc|.bash|.command)' },
       eslint = {
-        settings = {
-          packageManager = 'yarn',
-        },
+        settings = { packageManager = 'yarn' },
       },
       jsonls = {
         settings = {
@@ -169,9 +165,7 @@ return {
         },
         settings = {
           Lua = {
-            runtime = {
-              version = 'LuaJIT',
-            },
+            runtime = { version = 'LuaJIT' },
             diagnostics = {
               globals = { 'vim' },
               disable = { 'lowercase-global' },
@@ -183,17 +177,13 @@ return {
                 '${3rd}/luassert/library',
               },
             },
-            telemetry = {
-              enable = false,
-            },
+            telemetry = { enable = false },
           },
         },
       },
       yamlls = {
         settings = {
-          yaml = {
-            schemas = require('schemastore').yaml.schemas(),
-          },
+          yaml = { schemas = require('schemastore').yaml.schemas() },
         },
       },
     }

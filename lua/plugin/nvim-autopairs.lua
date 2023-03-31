@@ -18,7 +18,10 @@ return {
     cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
     autopairs.add_rules({
-      rule('%(.*%)%s*%=>$', ' {}', { 'typescript', 'javascript' })
+      rule('%(.*%)%s*%=>$', ' {}', {
+          'typescript',
+          'javascript',
+        })
         :use_regex(true)
         :set_end_pair_length(1),
       rule('<', '>', 'html'),

@@ -34,9 +34,7 @@ vim.opt.hidden = true
 vim.opt.ignorecase = true
 vim.opt.inccommand = 'nosplit'
 vim.opt.magic = true
-vim.opt.matchpairs:append({
-  '<:>',
-})
+vim.opt.matchpairs:append({ '<:>' })
 vim.opt.matchtime = 2
 vim.opt.pumblend = 10
 vim.opt.pumheight = 10

@@ -2,15 +2,16 @@ return {
   'folke/which-key.nvim',
   event = 'VeryLazy',
   opts = {
-    plugins = {
-      spelling = true,
-    },
+    plugins = { spelling = true },
   },
   config = function(_, opts)
     local wk = require('which-key')
     wk.setup(opts)
     local keymaps = {
-      mode = { 'n', 'v' },
+      mode = {
+        'n',
+        'v',
+      },
       ['g'] = { name = '+跳转' },
       ['['] = { name = '+上一个' },
       [']'] = { name = '+下一个' },

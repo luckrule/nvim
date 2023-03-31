@@ -1,6 +1,4 @@
-local augroup = vim.api.nvim_create_augroup('BasicAuGroup', {
-  clear = true,
-})
+local augroup = vim.api.nvim_create_augroup('BasicAuGroup', { clear = true })
 
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = '*',

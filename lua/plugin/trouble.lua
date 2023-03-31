@@ -26,7 +26,5 @@ return {
       desc = '快速修复列表',
     },
   },
-  opts = {
-    use_diagnostic_signs = true,
-  },
+  opts = { use_diagnostic_signs = true },
 }

@@ -16,9 +16,7 @@ return {
     local luasnip = require('luasnip')
 
     return {
-      completion = {
-        completeopt = 'menu,menuone,noinsert',
-      },
+      completion = { completeopt = 'menu,menuone,noinsert' },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
@@ -40,7 +38,10 @@ return {
           else
             fallback()
           end
-        end, { 'i', 's' }),
+        end, {
+          'i',
+          's',
+        }),
         ['<S-Tab>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
@@ -49,7 +50,10 @@ return {
           else
             fallback()
           end
-        end, { 'i', 's' }),
+        end, {
+          'i',
+          's',
+        }),
       }),
       sources = {
         { name = 'nvim_lsp' },
@@ -62,13 +66,15 @@ return {
   config = function(_, opts)
     local cmp = require('cmp')
     cmp.setup(opts)
-    cmp.setup.cmdline({ '/', '?' }, {
+    cmp.setup.cmdline({
+      '/',
+      '?',
+    }, {
       mapping = cmp.mapping.preset.cmdline(),
-      sources = cmp.config.sources({
-        { name = 'nvim_lsp_document_symbol' },
-      }, {
-        { name = 'buffer' },
-      }),
+      sources = cmp.config.sources(
+        { { name = 'nvim_lsp_document_symbol' } },
+        { { name = 'buffer' } }
+      ),
     })
 
     cmp.setup.cmdline(':', {
