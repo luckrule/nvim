@@ -10,6 +10,7 @@ return {
     'hrsh7th/cmp-nvim-lsp-document-symbol',
     'hrsh7th/cmp-nvim-lsp-signature-help',
     'saadparwaiz1/cmp_luasnip',
+    'L3MON4D3/LuaSnip',
   },
   opts = function()
     local cmp = require('cmp')
