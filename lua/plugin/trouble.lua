@@ -4,6 +4,9 @@ return {
     'TroubleToggle',
     'Trouble',
   },
+  dependencies = {
+    'nvim-tree/nvim-web-devicons',
+  },
   keys = {
     {
       '<leader>xx',

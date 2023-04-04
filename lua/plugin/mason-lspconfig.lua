@@ -132,6 +132,7 @@ return {
     'neovim/nvim-lspconfig',
     'williamboman/mason.nvim',
     'b0o/schemastore.nvim',
+    'folke/neodev.nvim',
   },
   opts = {
     ensure_installed = {
