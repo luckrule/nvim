@@ -136,6 +136,7 @@ return {
   },
   opts = {
     ensure_installed = {
+      'volar',
       'lua_ls',
       'jsonls',
       'yamlls',
