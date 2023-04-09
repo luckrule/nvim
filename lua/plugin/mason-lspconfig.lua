@@ -140,7 +140,6 @@ return {
       'jsonls',
       'yamlls',
       'bashls',
-      'eslint',
       'tsserver',
     },
     automatic_installation = true,
@@ -148,9 +147,6 @@ return {
   config = function(_, opts)
     local servers = {
       bashls = { GLOB_PATTERN = '*@(.sh|.zsh|.inc|.bash|.command)' },
-      eslint = {
-        settings = { packageManager = 'yarn' },
-      },
       jsonls = {
         settings = {
           json = {
