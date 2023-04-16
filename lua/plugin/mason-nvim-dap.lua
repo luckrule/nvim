@@ -13,9 +13,9 @@ return {
       'js-debug-adapter',
     },
     automatic_setup = true,
+    handlers = {},
   },
   config = function(_, opts)
     require('mason-nvim-dap').setup(opts)
-    require('mason-nvim-dap').setup_handlers()
   end,
 }

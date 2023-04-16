@@ -167,6 +167,11 @@ return {
           yaml = { schemas = require('schemastore').yaml.schemas() },
         },
       },
+      tsserver = {
+        init_options = {
+          locale = 'zh-CN',
+        },
+      },
     }
 
     require('mason-lspconfig').setup(opts)
